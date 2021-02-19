@@ -26,7 +26,6 @@ export const useSelector = selectorFn => {
 
 // -------------------------------------------------
 
-
 export const useDispatch = () => {
   const { dispatch } = useContext(PostContext);
   return dispatch;

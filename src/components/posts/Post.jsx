@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch } from '../../state/PostProvider';
+import { useDispatch } from 'react-redux';
 import { deletePost } from '../../actions/postActions';
+import CommentForm from '../form/commentForm/CommentForm';
+import CommentList from '../../comments/commentList';
 
-export const Post = ({ title, subtitle, author, content }) => {
+export const Post = ({ title, subtitle, author, content, index }) => {
   const dispatch = useDispatch();
 
   const handleClick = () => {
@@ -26,6 +28,11 @@ export const Post = ({ title, subtitle, author, content }) => {
         <dd>{content}</dd>
       </dl>
       <button onClick={handleClick}>DELETE</button>
+
+      {/* ------------------------------------------------ */}
+      
+      <CommentForm index={index} />
+      <CommentList /> 
     </>
   );
 };
@@ -35,5 +42,6 @@ Post.propTypes = {
   subtitle: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
+  index: PropTypes.number.isRequired,
 }
 ;

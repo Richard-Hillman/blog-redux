@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import { getPosts, countPosts } from './postSelector';
+import { getPosts } from './postSelector';
 
 describe('post selectors', () => {
 
@@ -17,13 +17,13 @@ describe('post selectors', () => {
 
   // ------------------------------------------------------------------------
 
-  it('counts number of posts', () => {
-    const state = {
-      posts: [{ title: 'frig', subtitle: 'ricky', author: 'also ricky', content:'frig ricky' }]
-    };
+  // it('counts number of posts', () => {
+  //   const state = {
+  //     posts: [{ title: 'frig', subtitle: 'ricky', author: 'also ricky', content:'frig ricky' }]
+  //   };
       
-    expect(countPosts(state)).toEqual(1);
-  });
+  //   expect(countPosts(state)).toEqual(1);
+  // });
 
   // ------------------------------------------------------------------------
 

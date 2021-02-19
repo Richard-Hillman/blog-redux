@@ -1,30 +1,31 @@
-import { CREATE_POST, DELETE_POST } from '../actions/postActions';
+/* eslint-disable max-len */
+import { CREATE_COMMENT, DELETE_COMMENT } from '../actions/commentActions';
 
 // -----------------------------------------------
 
 export const initialState = { 
-  posts: []
+  comments: []
 };
 
 // -----------------------------------------------
 
-export default function Reducer(state = initialState, action) {
+export default function reducer(state = initialState, action) {
   switch(action.type) {
 
     // -----------------------------------------------
 
-    case CREATE_POST:
+    case CREATE_COMMENT:
       return {
         ...state,
-        posts: [...state.posts, action.payload]
+        comments: [...state.comments, action.payload]
       };
 
       // -----------------------------------------------
 
-    case DELETE_POST:
+    case DELETE_COMMENT:
       return {
         ...state,
-        posts: state.posts.filter(post => post.title !==  action.payload)
+        posts: state.comments.filter(comment => comment.title !==  action.payload)
       };
 
       // -----------------------------------------------
